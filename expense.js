@@ -20,8 +20,21 @@ function calculateTotal(expenses) {
 }
 
 function filterByCategory(expenses, category) {
+  if (!Array.isArray(expenses)) {
+    throw new TypeError("Expenses must be an array");
+  }
+
+  if (typeof category !== "string") {
+    throw new TypeError("Category must be a string");
+  }
+
+  const normalizedCategory = category.trim().toLowerCase();
+
   return expenses.filter(
-    (expense) => expense.category === category
+    (expense) =>
+      expense &&
+      typeof expense.category === "string" &&
+      expense.category.trim().toLowerCase() === normalizedCategory
   );
 }
 
