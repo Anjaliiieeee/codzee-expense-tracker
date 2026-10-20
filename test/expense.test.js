@@ -5,7 +5,7 @@ const assert = require("node:assert/strict");
 const {
   calculateTotal,
   filterByCategory,
-} = require("./expense");
+} = require("../expense");
 
 test("calculates total expenses correctly", () => {
   assert.equal(
