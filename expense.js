@@ -27,7 +27,6 @@ function calculateTotal(expenses) {
   }, 0);
 }
 
-
 function filterByCategory(expenses, category) {
   if (!Array.isArray(expenses)) {
     throw new TypeError("Expenses must be an array");
